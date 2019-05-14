@@ -1,61 +1,59 @@
-#box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-#box > div {
-    height: 100px;
-    width: 100%;
-    text-align: center;
-}
-
-
-#caption {
-    background-color: #1E90FF;
-}
-
-
-#descrition {
-    background-color: white;
-}
-
-#computing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#computing form {
-    width: 300px;
-
-    padding: 30px;
-    border-radius: 5px;
-    border: 1px solid black;
-
-
+flex-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
 }
 
 .container {
-    clear: both;
-    text-align: right;
-    padding-top: 20px;
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
 }
 
-.container label {
-    float: left;
-    font-weight: bold;
-
+#computing {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.container input {
-    float: left;
-    width: 100%;
-
+#caption {
+	background-color: #1e90ff;
 }
 
-.container button {
-    float: left;
+form {
+	padding: 10px;
+	width: 300px;
+	border: 1px solid black;
+	text-align: left;
+}
 
+#computing form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
+.box {
+	width: 100%;
+	padding: 10px 0 10px 0;
+}
+
+.box label {
+	font-weight: bold;
+}
+.box input {
+	width: 100%;
+}
+
+.err{
+    /* border: 2px solid red; */
+    border-left: 3px solid;
+    border-left-color: red;
+}
+
+.box:last-child {
+	align-self: flex-start;
 }
