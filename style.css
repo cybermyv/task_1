@@ -1,0 +1,61 @@
+#box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#box > div {
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+
+#caption {
+    background-color: #1E90FF;
+}
+
+
+#descrition {
+    background-color: white;
+}
+
+#computing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#computing form {
+    width: 300px;
+
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+
+
+}
+
+.container {
+    clear: both;
+    text-align: right;
+    padding-top: 20px;
+}
+
+.container label {
+    float: left;
+    font-weight: bold;
+
+}
+
+.container input {
+    float: left;
+    width: 100%;
+
+}
+
+.container button {
+    float: left;
+
+
+}
