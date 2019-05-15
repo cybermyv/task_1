@@ -12,11 +12,6 @@ window.onload = function() {
 		el_input.forEach(function(el) {
 			el.addEventListener('input', function() {
                 isFloat(el.value)? el.classList.remove('err'):el.classList.add('err');
-                
-                console.log(el.hasChildNodes() );
-                
-                // closest('label').classList.add('err');
-				console.log(el.value);
 			});
 		});
 	}
@@ -33,7 +28,7 @@ function calculate() {
 	const second_number = isFloat(document.querySelector('#second_number').value);
 
 	if (!first_number || !second_number) {
-		alert('Не число');
+		alert('Ошибка вычисления!');
 		return;
 	} else {
 		let result = first_number + second_number;
