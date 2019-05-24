@@ -1,39 +1,35 @@
-window.onload = function() {
+(function () {
+
 	const el_btn = document.querySelector('#result_btn');
 	const el_input = document.querySelectorAll('form input');
 
-	if (el_btn) {
-		el_btn.addEventListener('click', function() {
-			calculate();
+	el_btn.addEventListener('click', function () {
+		calculate();
+	});
+
+	el_input.forEach(function (el) {
+		el.addEventListener('input', function () {
+			if (isNaN(Number(el.value))) { el.classList.toggle('err', false | true) };
 		});
+	});
+
+	function inputVerification(value) {
+		let result = parseFloat(value);
+		return result >= 0 ? true : false;
 	}
 
-	if (el_input) {
-		el_input.forEach(function(el) {
-			el.addEventListener('input', function() {
-                isFloat(el.value)? el.classList.remove('err'):el.classList.add('err');
-			});
-		});
-	}
-};
+	function calculate() {
+		const first_number = Number(document.querySelector('#first_number').value);
+		const second_number = Number(document.querySelector('#second_number').value);
 
-function isFloat(value) {
-	if (value === null) value = 0;
-	let result = parseFloat(value);
-	return result >= 0 ? result : false;
-}
-
-function calculate() {
-	const first_number = isFloat(document.querySelector('#first_number').value);
-	const second_number = isFloat(document.querySelector('#second_number').value);
-
-	if (!first_number || !second_number) {
-		alert('Ошибка вычисления!');
+		if (!inputVerification(first_number) || !inputVerification(second_number)) {
+			alert('Ошибка вычисления!');
+			return;
+		} else {
+			let result = first_number + second_number;
+			alert(Math.round(result * 100) / 100);
+		}
 		return;
-	} else {
-		let result = first_number + second_number;
-		alert(Math.round(result * 100) / 100);
 	}
 
-	return;
-}
+})();
